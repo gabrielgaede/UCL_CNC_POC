@@ -14,7 +14,7 @@ const executeRemoteCommand = (deviceId, connectionString) => {
   return new Promise((resolve, reject) => {
     client.invokeDeviceMethod(deviceId, methodParams, function(err, result) {
         if (err) {
-            console.error("Direct method error: "+err.message);
+            reject(err.message)
         } else {
             resolve(result); 
         }
