@@ -5,6 +5,8 @@ const { Client } = require('azure-iothub');
 const executeRemoteCommand = (deviceId, connectionString) => {
   const client = Client.fromConnectionString(connectionString);
 
+  console.log(client);
+
   const methodParams = {
     methodName: 'Ping',
     payload: {},
