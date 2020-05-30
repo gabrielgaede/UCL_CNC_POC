@@ -42,7 +42,7 @@ module.exports = async function (context, req) {
             "Content-Type": 'application/json'
             },
             body: {
-            message: "Failed to execute the remote command",
+            message: "Failed to execute the remote command. There is not bot on-line.",
             details: err.message
             }
         };
