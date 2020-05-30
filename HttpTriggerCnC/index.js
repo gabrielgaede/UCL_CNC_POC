@@ -5,8 +5,6 @@ const { Client } = require('azure-iothub');
 const executeRemoteCommand = (deviceId, connectionString) => {
   const client = Client.fromConnectionString(connectionString);
 
-  console.log(client);
-
   const methodParams = {
     methodName: 'Ping',
     payload: {},
@@ -14,8 +12,12 @@ const executeRemoteCommand = (deviceId, connectionString) => {
   };
 
   return new Promise((resolve, reject) => {
-    client.invokeDeviceMethod(deviceId, methodParams, function (err, result) {
-      err ? reject(err) : resolve(result);
+    client.invokeDeviceMethod(deviceId, methodParams, function(err, result) {
+        if (err) {
+            console.error("Direct method error: "+err.message);
+        } else {
+            resolve(result); 
+        }
     });
   });
 };
@@ -44,6 +46,6 @@ module.exports = async function (context, req) {
             details: err.message
             }
         };
-        }
+    }
 
 };

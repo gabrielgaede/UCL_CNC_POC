@@ -7,6 +7,7 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "azure-iot-device-amqp": "^1.12.3",
     "azure-iothub": "^1.12.3"
   },
   "devDependencies": {}

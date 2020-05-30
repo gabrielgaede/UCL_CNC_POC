@@ -10,7 +10,7 @@ var connectCallback = function (err) {
     if (err) {
       console.error('Could not connect: ' + err);
     } else {
-      console.log('Client connected');
+      console.log('Client connected to IoT Hub');
       var message = new Message('some data from my device');
       client.sendEvent(message, function (err) {
         if (err) console.log(err.toString());
