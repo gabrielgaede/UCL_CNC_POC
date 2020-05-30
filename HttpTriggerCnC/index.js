@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
     try {
-        const result = await executeRemoteCommand( 'uclBotDevice', 'HostName=ucl-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=JoIaQf1v8kZjJ4YmGYLSYJ7ZLIZhndBsrsY4/5U5KFw=');
+        const result = await executeRemoteCommand( 'uclBotDevice', 'HostName=ucl-iot-hub.azure-devices.net;DeviceId=uclBotDevice;SharedAccessKey=3VokBSqCmOfCP2gZxRUbv5sC+1dhQsN8drmiDH81ddo=');
         context.log(`Received response: ${result}`);
         context.res = {
             headers: {
